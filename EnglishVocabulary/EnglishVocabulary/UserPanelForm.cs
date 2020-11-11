@@ -12,23 +12,68 @@ namespace EnglishVocabulary
 {
     public partial class UserPanelForm : Form
     {
-        QuestionsPanelForm questionsPanel = new QuestionsPanelForm();
+        QuestionService questionService = new QuestionService();
+        QuestionsPanelForm questionsPanelForm;
+        StartViewForm startViewForm;
+
 
         public UserPanelForm()
         {
             InitializeComponent();
+            Initialize(questionService);
         }
 
-        public UserPanelForm(Form form)
+        public UserPanelForm(StartViewForm form)
         {
             InitializeComponent();
-            form.Close();
+            startViewForm = form;
         }
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)
         {
-            questionsPanel.ShowDialog();
+            questionsPanelForm = new QuestionsPanelForm(questionService);
+            questionsPanelForm.ShowDialog();
             this.Visible = false;
         }
+
+        private static void Initialize(QuestionService questionService)
+        {
+            questionService.AddNewQuestion("samochód", "car", "easy");
+            questionService.AddNewQuestion("dom", "house", "easy");
+            questionService.AddNewQuestion("kwiat", "flower", "easy");
+            questionService.AddNewQuestion("pies", "dog", "easy");
+            questionService.AddNewQuestion("pokój", "room", "easy");
+            questionService.AddNewQuestion("zapach", "smell", "easy");
+            questionService.AddNewQuestion("dotyk", "touch", "easy");
+            questionService.AddNewQuestion("wzrok", "eyesight", "easy");
+            questionService.AddNewQuestion("trawnik", "lawn", "easy");
+            questionService.AddNewQuestion("lodówka", "fridge", "easy");
+            questionService.AddNewQuestion("przewodniczący klasy", "prefect", "medium");
+            questionService.AddNewQuestion("nieobecność", "absence", "medium");
+            questionService.AddNewQuestion("nadużywać", "abuse", "medium");
+            questionService.AddNewQuestion("krzew", "bush", "medium");
+            questionService.AddNewQuestion("zdolność", "capacity", "medium");
+            questionService.AddNewQuestion("wózek", "cart", "medium");
+            questionService.AddNewQuestion("przyłapać", "catch", "medium");
+            questionService.AddNewQuestion("powodować", "cause", "medium");
+            questionService.AddNewQuestion("pewność siebie", "confidence", "medium");
+            questionService.AddNewQuestion("zamieszanie", "confusion", "medium");
+            questionService.AddNewQuestion("nieuchwytny", "elusive", "hard");
+            questionService.AddNewQuestion("śluza", "floodgate", "hard");
+            questionService.AddNewQuestion("piesza wycieczka", "hike", "hard");
+            questionService.AddNewQuestion("zrzeczenie się", "waiver", "hard");
+            questionService.AddNewQuestion("wypowiedzenie", "termination", "hard");
+            questionService.AddNewQuestion("spółka zależna", "subsidiary", "hard");
+            questionService.AddNewQuestion("opłaty", "surcharges", "hard");
+            questionService.AddNewQuestion("CV", "resume", "hard");
+            questionService.AddNewQuestion("kapitał", "asset", "hard");
+            questionService.AddNewQuestion("likwidacja spółki", "dissolution", "hard");
+            questionService.AddNewQuestion("współpracownik", " associate", "hard");
+            questionService.AddNewQuestion("uspokojony", "relieved", "hard");
+            questionService.AddNewQuestion("tajniak", "sleuth", "hard");
+        }
+
+
     }
+
 }

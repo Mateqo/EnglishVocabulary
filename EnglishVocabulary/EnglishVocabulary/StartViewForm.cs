@@ -21,6 +21,7 @@ namespace EnglishVocabulary
 
         private void UserPanelPictureBoxStart_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             userPanel.ShowDialog(this);
         }
     }

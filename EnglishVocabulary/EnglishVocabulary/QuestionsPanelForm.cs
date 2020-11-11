@@ -12,9 +12,31 @@ namespace EnglishVocabulary
 {
     public partial class QuestionsPanelForm : Form
     {
-        public QuestionsPanelForm()
+        QuestionService questionService;
+        public QuestionsPanelForm(QuestionService questionService)
         {
             InitializeComponent();
+            this.questionService = questionService;
+
+            questionsDataGridView.DataSource = questionService.ShowAllQuestions();
+            questionService.ShowAllLevels(levelsComboBox);
+        }
+
+        private void FilterButtonApply_Click(object sender, EventArgs e)
+        {
+            if (levelsComboBox.SelectedIndex != -1)
+            {
+                questionsDataGridView.DataSource = questionService.ShowQuestionsByLevel(levelsComboBox.SelectedItem.ToString());
+                removeFilterButton.Visible = true;
+            }
+            else
+                MessageBox.Show("Please select the level of difficulty");
+        }
+
+        private void FilterButtonRemove_Click(object sender, EventArgs e)
+        {
+            questionsDataGridView.DataSource = questionService.ShowAllQuestions();
+            removeFilterButton.Visible = false;
         }
     }
 }

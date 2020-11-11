@@ -52,6 +52,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
+    <Compile Include="QuestionService.cs" />
     <Compile Include="QuestionsPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>

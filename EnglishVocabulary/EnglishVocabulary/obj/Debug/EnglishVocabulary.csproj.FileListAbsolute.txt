@@ -2,11 +2,11 @@ D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVo
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.exe
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.pdb
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.csprojAssemblyReference.cache
-D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.StartView.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.Properties.Resources.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.csproj.GenerateResource.cache
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.csproj.CoreCompileInputs.cache
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.exe
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.pdb
-D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.UserPanel.resources
-D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.QuestionsPanel.resources
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.QuestionsPanelForm.resources
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.StartViewForm.resources
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.UserPanelForm.resources

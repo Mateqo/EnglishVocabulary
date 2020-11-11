@@ -138,7 +138,7 @@
             this.progressPercentLabel.TabIndex = 7;
             this.progressPercentLabel.Text = "0 %";
             // 
-            // UserPanel
+            // UserPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             this.Controls.Add(this.completedTasksProgressBar);
             this.Controls.Add(this.menuLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "UserPanel";
+            this.Name = "UserPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
             this.ResumeLayout(false);
