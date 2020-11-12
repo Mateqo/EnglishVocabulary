@@ -13,10 +13,13 @@ namespace EnglishVocabulary
     public partial class QuestionsPanelForm : Form
     {
         QuestionService questionService;
-        public QuestionsPanelForm(QuestionService questionService)
+        UserPanelForm userPanelForm;
+
+        public QuestionsPanelForm(QuestionService questionService, UserPanelForm userPanelForm)
         {
             InitializeComponent();
             this.questionService = questionService;
+            this.userPanelForm = userPanelForm;
 
             questionsDataGridView.DataSource = questionService.ShowAllQuestions();
             questionService.ShowAllLevels(levelsComboBox);
@@ -37,6 +40,11 @@ namespace EnglishVocabulary
         {
             questionsDataGridView.DataSource = questionService.ShowAllQuestions();
             removeFilterButton.Visible = false;
+        }
+
+        private void ReturnToUserPanel_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            userPanelForm.Visible = true;
         }
     }
 }

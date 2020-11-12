@@ -111,6 +111,7 @@
             this.addNewQuestionLabel.Size = new System.Drawing.Size(106, 50);
             this.addNewQuestionLabel.TabIndex = 5;
             this.addNewQuestionLabel.Text = "Add";
+            this.addNewQuestionLabel.Click += new System.EventHandler(this.AddNewQuestionLabel_Click);
             // 
             // progressLabel
             // 

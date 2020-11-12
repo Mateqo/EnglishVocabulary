@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewQuestionForm.Designer.cs">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +79,9 @@
     <Compile Include="UserPanelForm.Designer.cs">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewQuestionForm.resx">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuestionsPanelForm.resx">
       <DependentUpon>QuestionsPanelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +117,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\panelBg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

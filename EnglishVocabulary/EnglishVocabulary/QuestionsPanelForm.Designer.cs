@@ -133,6 +133,7 @@
             this.Name = "QuestionsPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanel_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
