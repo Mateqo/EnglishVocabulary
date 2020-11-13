@@ -60,7 +60,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(180, 186);
+            this.label2.Location = new System.Drawing.Point(185, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(330, 38);
             this.label2.TabIndex = 3;
@@ -70,11 +70,13 @@
             // 
             this.newQuestionTextBox.BackColor = System.Drawing.Color.SandyBrown;
             this.newQuestionTextBox.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newQuestionTextBox.Location = new System.Drawing.Point(516, 183);
+            this.newQuestionTextBox.Location = new System.Drawing.Point(516, 162);
             this.newQuestionTextBox.Name = "newQuestionTextBox";
             this.newQuestionTextBox.Size = new System.Drawing.Size(209, 47);
             this.newQuestionTextBox.TabIndex = 4;
             this.newQuestionTextBox.Text = "czerwony";
+            this.newQuestionTextBox.Enter += new System.EventHandler(this.HidePlaceHolderQuestionTextBox_Enter);
+            this.newQuestionTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderQuestionTextBox_Leave);
             // 
             // label3
             // 
@@ -82,7 +84,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(180, 259);
+            this.label3.Location = new System.Drawing.Point(185, 236);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 38);
             this.label3.TabIndex = 5;
@@ -92,11 +94,13 @@
             // 
             this.newAnswerTextBox.BackColor = System.Drawing.Color.SandyBrown;
             this.newAnswerTextBox.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newAnswerTextBox.Location = new System.Drawing.Point(331, 256);
+            this.newAnswerTextBox.Location = new System.Drawing.Point(331, 236);
             this.newAnswerTextBox.Name = "newAnswerTextBox";
             this.newAnswerTextBox.Size = new System.Drawing.Size(215, 47);
             this.newAnswerTextBox.TabIndex = 6;
             this.newAnswerTextBox.Text = "red";
+            this.newAnswerTextBox.Enter += new System.EventHandler(this.HidePlaceHolderAnswerTextBox_Enter);
+            this.newAnswerTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderAnswerTextBox_Leave);
             // 
             // addNewQuestionButton
             // 
@@ -109,6 +113,7 @@
             this.addNewQuestionButton.TabIndex = 7;
             this.addNewQuestionButton.Text = "Add";
             this.addNewQuestionButton.UseVisualStyleBackColor = false;
+            this.addNewQuestionButton.Click += new System.EventHandler(this.AddNewQuestionButton_Click);
             // 
             // label4
             // 
@@ -116,7 +121,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(180, 333);
+            this.label4.Location = new System.Drawing.Point(180, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 38);
             this.label4.TabIndex = 8;
@@ -126,18 +131,20 @@
             // 
             this.newLevelTextBox.BackColor = System.Drawing.Color.SandyBrown;
             this.newLevelTextBox.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newLevelTextBox.Location = new System.Drawing.Point(300, 330);
+            this.newLevelTextBox.Location = new System.Drawing.Point(300, 318);
             this.newLevelTextBox.Name = "newLevelTextBox";
             this.newLevelTextBox.Size = new System.Drawing.Size(215, 47);
             this.newLevelTextBox.TabIndex = 9;
             this.newLevelTextBox.Text = "easy";
+            this.newLevelTextBox.Enter += new System.EventHandler(this.HidePlaceHolderLeveTextBox_Enter);
+            this.newLevelTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderLevelTextBox_Leave);
             // 
             // infoLevelPictureBox
             // 
             this.infoLevelPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.infoLevelPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.info;
             this.infoLevelPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.infoLevelPictureBox.Location = new System.Drawing.Point(516, 330);
+            this.infoLevelPictureBox.Location = new System.Drawing.Point(516, 318);
             this.infoLevelPictureBox.Name = "infoLevelPictureBox";
             this.infoLevelPictureBox.Size = new System.Drawing.Size(35, 26);
             this.infoLevelPictureBox.TabIndex = 10;

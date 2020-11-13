@@ -52,6 +52,7 @@
     <Compile Include="AddNewQuestionForm.Designer.cs">
       <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignService.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -79,6 +80,7 @@
     <Compile Include="UserPanelForm.Designer.cs">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidationService.cs" />
     <EmbeddedResource Include="AddNewQuestionForm.resx">
       <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
     </EmbeddedResource>

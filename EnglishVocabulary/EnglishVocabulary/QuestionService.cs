@@ -19,7 +19,7 @@ namespace EnglishVocabulary
         {
             int newId = Questions.Count() + 1;
 
-            Question question = new Question(newId,content,level,answer);
+            Question question = new Question(newId,content.ToLower(),level.ToLower(), answer.ToLower());
 
             Questions.Add(question);
         }

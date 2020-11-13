@@ -76,7 +76,7 @@ namespace EnglishVocabulary
             questionService.AddNewQuestion("CV", "resume", "hard");
             questionService.AddNewQuestion("kapitał", "asset", "hard");
             questionService.AddNewQuestion("likwidacja spółki", "dissolution", "hard");
-            questionService.AddNewQuestion("współpracownik", " associate", "hard");
+            questionService.AddNewQuestion("współpracownik", "associate", "hard");
             questionService.AddNewQuestion("uspokojony", "relieved", "hard");
             questionService.AddNewQuestion("tajniak", "sleuth", "hard");
         }
