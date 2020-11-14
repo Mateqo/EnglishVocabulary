@@ -98,6 +98,7 @@
             this.removeQuestionLabel.Size = new System.Drawing.Size(178, 50);
             this.removeQuestionLabel.TabIndex = 4;
             this.removeQuestionLabel.Text = "Remove";
+            this.removeQuestionLabel.Click += new System.EventHandler(this.RemoveQuestionLabel_Click);
             // 
             // addNewQuestionLabel
             // 
@@ -158,6 +159,7 @@
             this.Name = "UserPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToStartView_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

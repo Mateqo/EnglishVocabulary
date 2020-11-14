@@ -41,17 +41,17 @@ namespace EnglishVocabulary
 
             if (!validationService.CheckPolishWorld(newQuestionTextBox)|| newQuestionTextBox.Text==PlaceHolderQuestion)
             {
-                MessageBox.Show("Incorrect question!", "Warning");
+                MessageBox.Show("Incorrect question!", "",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 status = false;
             }
             else if (!validationService.CheckEnglishWorld(newAnswerTextBox) || newAnswerTextBox.Text == PlaceHolderAnswer)
             {
-                MessageBox.Show("Incorrect answer!", "Warning");
+                MessageBox.Show("Incorrect answer!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 status = false;
             }
             else if (!validationService.CheckEnglishWorld(newLevelTextBox))
             {
-                MessageBox.Show("Incorrect level!", "Warning");
+                MessageBox.Show("Incorrect level!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 status = false;
             }
 
@@ -65,7 +65,7 @@ namespace EnglishVocabulary
             }
         }
 
-        private void ReturnToUserPanl_FormClosed(object sender, FormClosedEventArgs e)
+        private void ReturnToUserPanel_FormClosed(object sender, FormClosedEventArgs e)
         {
             userPanelForm.Visible = true;
         }

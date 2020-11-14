@@ -22,6 +22,7 @@ namespace EnglishVocabulary
             this.userPanelForm = userPanelForm;
 
             questionsDataGridView.DataSource = questionService.ShowAllQuestions();
+            questionsDataGridView.Columns["IsDeleted"].Visible = false;
             questionService.ShowAllLevels(levelsComboBox);
         }
 

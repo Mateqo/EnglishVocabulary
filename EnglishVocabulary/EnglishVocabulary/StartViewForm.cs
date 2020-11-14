@@ -12,7 +12,7 @@ namespace EnglishVocabulary
 {
     public partial class StartViewForm : Form
     {
-        UserPanelForm userPanel = new UserPanelForm();
+        UserPanelForm userPanel;
 
         public StartViewForm()
         {
@@ -22,7 +22,8 @@ namespace EnglishVocabulary
         private void UserPanelPictureBoxStart_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            userPanel.ShowDialog(this);
+            userPanel = new UserPanelForm(this);
+            userPanel.ShowDialog();
         }
     }
 }

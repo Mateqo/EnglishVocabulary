@@ -26,7 +26,7 @@ namespace EnglishVocabulary
 
         public List<Question> ShowAllQuestions()
         {
-            return Questions;     
+            return Questions.Where(x=>x.IsDeleted==false).ToList();     
         }
 
         public void ShowAllLevels(ComboBox levelsComboBox)
@@ -44,7 +44,15 @@ namespace EnglishVocabulary
 
         public List<Question> ShowQuestionsByLevel(string filtr)
         {
-            return Questions.Where(x => x.Level == filtr).ToList();
+            return Questions.Where(x => x.Level == filtr && x.IsDeleted==false).ToList();
+        }
+
+        public bool DeleteQuestionById(int id)
+        {
+            var questionDeleted =Questions.Find(x => x.Id == id);
+            questionDeleted.IsDeleted = true;
+
+            return false;
         }
 
     }

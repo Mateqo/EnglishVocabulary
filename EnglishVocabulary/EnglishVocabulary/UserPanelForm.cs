@@ -15,19 +15,14 @@ namespace EnglishVocabulary
         QuestionService questionService = new QuestionService();
         QuestionsPanelForm questionsPanelForm;
         AddNewQuestionForm addNewQuestionForm;
+        RemoveQuestionForm removeQuestionForm;
         StartViewForm startViewForm;
 
-
-        public UserPanelForm()
+        public UserPanelForm(StartViewForm startViewForm)
         {
             InitializeComponent();
             Initialize(questionService);
-        }
-
-        public UserPanelForm(StartViewForm form)
-        {
-            InitializeComponent();
-            startViewForm = form;
+            this.startViewForm = startViewForm;
         }
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)
@@ -42,6 +37,18 @@ namespace EnglishVocabulary
             addNewQuestionForm = new AddNewQuestionForm(questionService,this);
             this.Visible = false;
             addNewQuestionForm.ShowDialog();
+        }
+
+        private void RemoveQuestionLabel_Click(object sender, EventArgs e)
+        {
+            removeQuestionForm = new RemoveQuestionForm(questionService, this);
+            this.Visible = false;
+            removeQuestionForm.ShowDialog();
+        }
+
+        private void ReturnToStartView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            startViewForm.Visible = true;
         }
 
         private static void Initialize(QuestionService questionService)
@@ -80,7 +87,7 @@ namespace EnglishVocabulary
             questionService.AddNewQuestion("uspokojony", "relieved", "hard");
             questionService.AddNewQuestion("tajniak", "sleuth", "hard");
         }
-        
+
     }
 
 }

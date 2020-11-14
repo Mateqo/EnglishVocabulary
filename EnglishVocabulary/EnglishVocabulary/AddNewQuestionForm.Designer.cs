@@ -48,11 +48,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(239, 40);
+            this.label1.Location = new System.Drawing.Point(225, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 65);
+            this.label1.Size = new System.Drawing.Size(424, 65);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Add Question";
+            this.label1.Text = "Add a question";
             // 
             // label2
             // 
@@ -74,6 +74,7 @@
             this.newQuestionTextBox.Name = "newQuestionTextBox";
             this.newQuestionTextBox.Size = new System.Drawing.Size(209, 47);
             this.newQuestionTextBox.TabIndex = 4;
+            this.newQuestionTextBox.TabStop = false;
             this.newQuestionTextBox.Text = "czerwony";
             this.newQuestionTextBox.Enter += new System.EventHandler(this.HidePlaceHolderQuestionTextBox_Enter);
             this.newQuestionTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderQuestionTextBox_Leave);
@@ -98,6 +99,7 @@
             this.newAnswerTextBox.Name = "newAnswerTextBox";
             this.newAnswerTextBox.Size = new System.Drawing.Size(215, 47);
             this.newAnswerTextBox.TabIndex = 6;
+            this.newAnswerTextBox.TabStop = false;
             this.newAnswerTextBox.Text = "red";
             this.newAnswerTextBox.Enter += new System.EventHandler(this.HidePlaceHolderAnswerTextBox_Enter);
             this.newAnswerTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderAnswerTextBox_Leave);
@@ -135,6 +137,7 @@
             this.newLevelTextBox.Name = "newLevelTextBox";
             this.newLevelTextBox.Size = new System.Drawing.Size(215, 47);
             this.newLevelTextBox.TabIndex = 9;
+            this.newLevelTextBox.TabStop = false;
             this.newLevelTextBox.Text = "easy";
             this.newLevelTextBox.Enter += new System.EventHandler(this.HidePlaceHolderLeveTextBox_Enter);
             this.newLevelTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderLevelTextBox_Leave);
@@ -171,7 +174,7 @@
             this.Name = "AddNewQuestionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanl_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanel_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.infoLevelPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

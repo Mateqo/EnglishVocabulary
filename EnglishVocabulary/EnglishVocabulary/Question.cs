@@ -15,6 +15,7 @@ namespace EnglishVocabulary
         public string Level { get; set; }
         public string Choice { get; set; }
         public bool IsCorrectAnswer { get; set; }
+        public bool IsDeleted { get; set; }
 
         public Question(int id, string content, string level, string answer)
         {
