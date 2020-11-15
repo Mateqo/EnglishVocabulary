@@ -12,3 +12,4 @@ D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVo
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.UserPanelForm.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.AddNewQuestionForm.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.RemoveQuestionForm.resources
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.QuizForm.resources

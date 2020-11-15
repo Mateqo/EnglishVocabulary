@@ -76,6 +76,7 @@
             this.newQuestionTextBox.TabIndex = 4;
             this.newQuestionTextBox.TabStop = false;
             this.newQuestionTextBox.Text = "czerwony";
+            this.newQuestionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newQuestionTextBox.Enter += new System.EventHandler(this.HidePlaceHolderQuestionTextBox_Enter);
             this.newQuestionTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderQuestionTextBox_Leave);
             // 
@@ -101,6 +102,7 @@
             this.newAnswerTextBox.TabIndex = 6;
             this.newAnswerTextBox.TabStop = false;
             this.newAnswerTextBox.Text = "red";
+            this.newAnswerTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newAnswerTextBox.Enter += new System.EventHandler(this.HidePlaceHolderAnswerTextBox_Enter);
             this.newAnswerTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderAnswerTextBox_Leave);
             // 
@@ -139,6 +141,7 @@
             this.newLevelTextBox.TabIndex = 9;
             this.newLevelTextBox.TabStop = false;
             this.newLevelTextBox.Text = "easy";
+            this.newLevelTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.newLevelTextBox.Enter += new System.EventHandler(this.HidePlaceHolderLeveTextBox_Enter);
             this.newLevelTextBox.Leave += new System.EventHandler(this.ShowPlaceHolderLevelTextBox_Leave);
             // 

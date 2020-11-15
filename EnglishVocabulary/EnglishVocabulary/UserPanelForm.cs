@@ -13,6 +13,7 @@ namespace EnglishVocabulary
     public partial class UserPanelForm : Form
     {
         QuestionService questionService = new QuestionService();
+        QuizForm quizForm;
         QuestionsPanelForm questionsPanelForm;
         AddNewQuestionForm addNewQuestionForm;
         RemoveQuestionForm removeQuestionForm;
@@ -23,6 +24,13 @@ namespace EnglishVocabulary
             InitializeComponent();
             Initialize(questionService);
             this.startViewForm = startViewForm;
+        }
+
+        private void StartQuizLabel_Click(object sender, EventArgs e)
+        {
+            quizForm = new QuizForm(questionService, this);
+            this.Visible = false;
+            quizForm.ShowDialog();
         }
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)

@@ -71,6 +71,7 @@
             this.startLearningLabel.Size = new System.Drawing.Size(307, 50);
             this.startLearningLabel.TabIndex = 2;
             this.startLearningLabel.Text = "Start learning";
+            this.startLearningLabel.Click += new System.EventHandler(this.StartQuizLabel_Click);
             // 
             // showQuestionsLabel
             // 
