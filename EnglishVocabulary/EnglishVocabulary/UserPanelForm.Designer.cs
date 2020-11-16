@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserPanelForm));
             this.menuLabel = new System.Windows.Forms.Label();
             this.completedTasksProgressBar = new System.Windows.Forms.ProgressBar();
             this.startLearningLabel = new System.Windows.Forms.Label();
@@ -36,6 +38,10 @@
             this.addNewQuestionLabel = new System.Windows.Forms.Label();
             this.progressLabel = new System.Windows.Forms.Label();
             this.progressPercentLabel = new System.Windows.Forms.Label();
+            this.checkProgressTimer = new System.Windows.Forms.Timer(this.components);
+            this.restartProgressPictureBox = new System.Windows.Forms.PictureBox();
+            this.quitLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.restartProgressPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuLabel
@@ -44,7 +50,7 @@
             this.menuLabel.BackColor = System.Drawing.Color.Transparent;
             this.menuLabel.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuLabel.ForeColor = System.Drawing.Color.Black;
-            this.menuLabel.Location = new System.Drawing.Point(325, 29);
+            this.menuLabel.Location = new System.Drawing.Point(320, 25);
             this.menuLabel.Name = "menuLabel";
             this.menuLabel.Size = new System.Drawing.Size(180, 65);
             this.menuLabel.TabIndex = 0;
@@ -57,6 +63,7 @@
             this.completedTasksProgressBar.Location = new System.Drawing.Point(582, 468);
             this.completedTasksProgressBar.Name = "completedTasksProgressBar";
             this.completedTasksProgressBar.Size = new System.Drawing.Size(190, 31);
+            this.completedTasksProgressBar.Step = 1;
             this.completedTasksProgressBar.TabIndex = 1;
             // 
             // startLearningLabel
@@ -66,7 +73,7 @@
             this.startLearningLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startLearningLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startLearningLabel.ForeColor = System.Drawing.Color.Black;
-            this.startLearningLabel.Location = new System.Drawing.Point(263, 132);
+            this.startLearningLabel.Location = new System.Drawing.Point(248, 107);
             this.startLearningLabel.Name = "startLearningLabel";
             this.startLearningLabel.Size = new System.Drawing.Size(307, 50);
             this.startLearningLabel.TabIndex = 2;
@@ -80,7 +87,7 @@
             this.showQuestionsLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showQuestionsLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showQuestionsLabel.ForeColor = System.Drawing.Color.Black;
-            this.showQuestionsLabel.Location = new System.Drawing.Point(263, 211);
+            this.showQuestionsLabel.Location = new System.Drawing.Point(248, 181);
             this.showQuestionsLabel.Name = "showQuestionsLabel";
             this.showQuestionsLabel.Size = new System.Drawing.Size(218, 50);
             this.showQuestionsLabel.TabIndex = 3;
@@ -94,7 +101,7 @@
             this.removeQuestionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeQuestionLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeQuestionLabel.ForeColor = System.Drawing.Color.Black;
-            this.removeQuestionLabel.Location = new System.Drawing.Point(263, 349);
+            this.removeQuestionLabel.Location = new System.Drawing.Point(248, 321);
             this.removeQuestionLabel.Name = "removeQuestionLabel";
             this.removeQuestionLabel.Size = new System.Drawing.Size(178, 50);
             this.removeQuestionLabel.TabIndex = 4;
@@ -108,7 +115,7 @@
             this.addNewQuestionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewQuestionLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewQuestionLabel.ForeColor = System.Drawing.Color.Black;
-            this.addNewQuestionLabel.Location = new System.Drawing.Point(263, 283);
+            this.addNewQuestionLabel.Location = new System.Drawing.Point(248, 250);
             this.addNewQuestionLabel.Name = "addNewQuestionLabel";
             this.addNewQuestionLabel.Size = new System.Drawing.Size(106, 50);
             this.addNewQuestionLabel.TabIndex = 5;
@@ -124,9 +131,9 @@
             this.progressLabel.ForeColor = System.Drawing.Color.Black;
             this.progressLabel.Location = new System.Drawing.Point(576, 424);
             this.progressLabel.Name = "progressLabel";
-            this.progressLabel.Size = new System.Drawing.Size(121, 31);
+            this.progressLabel.Size = new System.Drawing.Size(129, 31);
             this.progressLabel.TabIndex = 6;
-            this.progressLabel.Text = "Progress";
+            this.progressLabel.Text = "Progress:";
             // 
             // progressPercentLabel
             // 
@@ -135,11 +142,44 @@
             this.progressPercentLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.progressPercentLabel.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.progressPercentLabel.ForeColor = System.Drawing.Color.Black;
-            this.progressPercentLabel.Location = new System.Drawing.Point(703, 424);
+            this.progressPercentLabel.Location = new System.Drawing.Point(711, 424);
             this.progressPercentLabel.Name = "progressPercentLabel";
             this.progressPercentLabel.Size = new System.Drawing.Size(51, 31);
             this.progressPercentLabel.TabIndex = 7;
             this.progressPercentLabel.Text = "0 %";
+            // 
+            // checkProgressTimer
+            // 
+            this.checkProgressTimer.Enabled = true;
+            this.checkProgressTimer.Interval = 1000;
+            this.checkProgressTimer.Tick += new System.EventHandler(this.UpdateProgressTimer_Tick);
+            // 
+            // restartProgressPictureBox
+            // 
+            this.restartProgressPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.restartProgressPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.restart;
+            this.restartProgressPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.restartProgressPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restartProgressPictureBox.Location = new System.Drawing.Point(543, 468);
+            this.restartProgressPictureBox.Name = "restartProgressPictureBox";
+            this.restartProgressPictureBox.Size = new System.Drawing.Size(33, 31);
+            this.restartProgressPictureBox.TabIndex = 8;
+            this.restartProgressPictureBox.TabStop = false;
+            this.restartProgressPictureBox.Click += new System.EventHandler(this.RestartProgressPictureBox_Click);
+            // 
+            // quitLabel
+            // 
+            this.quitLabel.AutoSize = true;
+            this.quitLabel.BackColor = System.Drawing.Color.Transparent;
+            this.quitLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quitLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitLabel.ForeColor = System.Drawing.Color.Black;
+            this.quitLabel.Location = new System.Drawing.Point(248, 383);
+            this.quitLabel.Name = "quitLabel";
+            this.quitLabel.Size = new System.Drawing.Size(112, 50);
+            this.quitLabel.TabIndex = 9;
+            this.quitLabel.Text = "Quit";
+            this.quitLabel.Click += new System.EventHandler(this.ReturnToStartViewLabel_Click);
             // 
             // UserPanelForm
             // 
@@ -148,6 +188,8 @@
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.panelBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 511);
+            this.Controls.Add(this.quitLabel);
+            this.Controls.Add(this.restartProgressPictureBox);
             this.Controls.Add(this.progressPercentLabel);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.addNewQuestionLabel);
@@ -156,11 +198,12 @@
             this.Controls.Add(this.startLearningLabel);
             this.Controls.Add(this.completedTasksProgressBar);
             this.Controls.Add(this.menuLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToStartView_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.restartProgressPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +219,8 @@
         private System.Windows.Forms.Label addNewQuestionLabel;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.Label progressPercentLabel;
+        private System.Windows.Forms.Timer checkProgressTimer;
+        private System.Windows.Forms.PictureBox restartProgressPictureBox;
+        private System.Windows.Forms.Label quitLabel;
     }
 }

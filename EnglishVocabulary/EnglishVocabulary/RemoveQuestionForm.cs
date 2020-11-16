@@ -58,15 +58,15 @@ namespace EnglishVocabulary
                 MessageBox.Show("Please select a question.","",MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
-        private void ReturnToUserPanel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            userPanelForm.Visible = true;
-        }
-
         private void UnselectDefault_Load(object sender, EventArgs e)
         {
             questionsDataGridView.CurrentRow.Selected = false;
         }
 
+        private void ReturnToUserPanelPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            userPanelForm.Visible = true;
+        }
     }
 }

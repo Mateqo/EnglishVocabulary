@@ -25,5 +25,10 @@ namespace EnglishVocabulary
             userPanel = new UserPanelForm(this);
             userPanel.ShowDialog();
         }
+
+        private void QuitApp_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -23,14 +23,23 @@ namespace EnglishVocabulary
                 textBox.Text = placeHolder;
         }
 
-        public void CorrectQuestion(Button answerCorrectButton)
+        public void CorrectQuestion(Button answerCorrectButton,Label veryficationLabel,PictureBox veryficationPictureBox)
         {
             answerCorrectButton.BackColor = Color.SeaGreen;
+            veryficationLabel.Visible = true;
+            veryficationPictureBox.Visible = true;
+            veryficationLabel.Text = "Correct answer";
+            veryficationPictureBox.Image = Properties.Resources.correct;
+
         }
 
-        public void WrongQuestion(Button answerButton)
+        public void WrongQuestion(Button answerButton, Label veryficationLabel, PictureBox veryficationPictureBox)
         {
             answerButton.BackColor = Color.Brown;
+            veryficationLabel.Visible = true;
+            veryficationPictureBox.Visible = true;
+            veryficationLabel.Text = "Wrong answer";
+            veryficationPictureBox.Image = Properties.Resources.wrong;
         }
 
     }

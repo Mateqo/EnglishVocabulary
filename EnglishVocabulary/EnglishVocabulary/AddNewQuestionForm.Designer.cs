@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewQuestionForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.newQuestionTextBox = new System.Windows.Forms.TextBox();
@@ -39,7 +40,9 @@
             this.newLevelTextBox = new System.Windows.Forms.TextBox();
             this.infoLevelPictureBox = new System.Windows.Forms.PictureBox();
             this.levelToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ReturnToUserPanelPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.infoLevelPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,6 +160,19 @@
             this.infoLevelPictureBox.TabStop = false;
             this.infoLevelPictureBox.MouseEnter += new System.EventHandler(this.ShowInfoAboutLevelPictureBox_MouseEnter);
             // 
+            // ReturnToUserPanelPictureBox
+            // 
+            this.ReturnToUserPanelPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ReturnToUserPanelPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.home;
+            this.ReturnToUserPanelPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ReturnToUserPanelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReturnToUserPanelPictureBox.Location = new System.Drawing.Point(677, 12);
+            this.ReturnToUserPanelPictureBox.Name = "ReturnToUserPanelPictureBox";
+            this.ReturnToUserPanelPictureBox.Size = new System.Drawing.Size(77, 64);
+            this.ReturnToUserPanelPictureBox.TabIndex = 15;
+            this.ReturnToUserPanelPictureBox.TabStop = false;
+            this.ReturnToUserPanelPictureBox.Click += new System.EventHandler(this.ReturnToUserPanelPictureBox_Click);
+            // 
             // AddNewQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +180,7 @@
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.panelBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(766, 490);
+            this.Controls.Add(this.ReturnToUserPanelPictureBox);
             this.Controls.Add(this.infoLevelPictureBox);
             this.Controls.Add(this.newLevelTextBox);
             this.Controls.Add(this.label4);
@@ -173,12 +190,13 @@
             this.Controls.Add(this.newQuestionTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNewQuestionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanel_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.infoLevelPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +214,6 @@
         private System.Windows.Forms.TextBox newLevelTextBox;
         private System.Windows.Forms.PictureBox infoLevelPictureBox;
         private System.Windows.Forms.ToolTip levelToolTip;
+        private System.Windows.Forms.PictureBox ReturnToUserPanelPictureBox;
     }
 }

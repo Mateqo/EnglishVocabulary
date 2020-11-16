@@ -12,10 +12,12 @@ namespace EnglishVocabulary
 {
     public partial class QuizForm : Form
     {
+        const int TimeToAnswer = 9;
         DesignService designService = new DesignService();
         QuestionService questionService;
         UserPanelForm userPanelForm;
         int actualIdQuestion;
+        int answerTime = TimeToAnswer;
 
         public QuizForm(QuestionService questionService, UserPanelForm userPanelForm)
         {
@@ -23,21 +25,51 @@ namespace EnglishVocabulary
             this.questionService = questionService;
             this.userPanelForm = userPanelForm;
             actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
-        }
-
-        private void ReturnToUserPanel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            userPanelForm.Visible = true;
+            answerTimer.Start();
+            completedTasksProgressBar.Value = questionService.UpdateProgress();
+            progressPercentLabel.Text = completedTasksProgressBar.Value + " %";
         }
 
         private void NextQuestionPictureBox_Click(object sender, EventArgs e)
         {
             nextQuestionPictureBox.Visible = false;
+            veryficationPictureBox.Visible = false;
+            veryficationLabel.Visible = false;
+
             answerButton1.BackColor = Color.PapayaWhip;
             answerButton2.BackColor = Color.PapayaWhip;
             answerButton3.BackColor = Color.PapayaWhip;
             answerButton4.BackColor = Color.PapayaWhip;
+
             actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+
+            answerTime = TimeToAnswer;
+            timeLabel.Text = answerTime.ToString();
+            answerTimer.Start();
+
+            completedTasksProgressBar.Value = questionService.UpdateProgress();
+            progressPercentLabel.Text = completedTasksProgressBar.Value+" %";
+        }
+
+        private void AnswerTimer_Tick(object sender, EventArgs e)
+        {
+            if (answerTime != 0)
+            {
+                answerTime--;
+            }
+            else
+            {
+                actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+                answerTime = TimeToAnswer;
+            }
+
+            timeLabel.Text = answerTime.ToString();
+        }
+
+        private void ReturnToUserPanelPictureBox_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            userPanelForm.Visible = true;
         }
 
         #region check answer
@@ -49,11 +81,12 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton1, actualIdQuestion);
 
                 if (status)
-                    designService.CorrectQuestion(answerButton1);
+                    designService.CorrectQuestion(answerButton1,veryficationLabel,veryficationPictureBox);
                 else
-                    designService.WrongQuestion(answerButton1);
+                    designService.WrongQuestion(answerButton1, veryficationLabel, veryficationPictureBox);
 
                 nextQuestionPictureBox.Visible = true;
+                answerTimer.Stop();
             }
         }
 
@@ -64,11 +97,12 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton2, actualIdQuestion);
 
                 if (status)
-                    designService.CorrectQuestion(answerButton2);
+                    designService.CorrectQuestion(answerButton2, veryficationLabel, veryficationPictureBox);
                 else
-                    designService.WrongQuestion(answerButton2);
+                    designService.WrongQuestion(answerButton2, veryficationLabel, veryficationPictureBox);
 
                 nextQuestionPictureBox.Visible = true;
+                answerTimer.Stop();
             }
         }
 
@@ -79,11 +113,12 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton3, actualIdQuestion);
 
                 if (status)
-                    designService.CorrectQuestion(answerButton3);
+                    designService.CorrectQuestion(answerButton3, veryficationLabel, veryficationPictureBox);
                 else
-                    designService.WrongQuestion(answerButton3);
+                    designService.WrongQuestion(answerButton3, veryficationLabel, veryficationPictureBox);
 
                 nextQuestionPictureBox.Visible = true;
+                answerTimer.Stop();
             }
         }
 
@@ -94,11 +129,12 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton4, actualIdQuestion);
 
                 if (status)
-                    designService.CorrectQuestion(answerButton4);
+                    designService.CorrectQuestion(answerButton4, veryficationLabel, veryficationPictureBox);
                 else
-                    designService.WrongQuestion(answerButton4);
+                    designService.WrongQuestion(answerButton4, veryficationLabel, veryficationPictureBox);
 
                 nextQuestionPictureBox.Visible = true;
+                answerTimer.Stop();
             }
         }
 
@@ -155,6 +191,7 @@ namespace EnglishVocabulary
         }
 
         #endregion answer:hover
+
 
     }
 }

@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionsPanelForm));
             this.questionsDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.levelsComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.apllyFilterButton = new System.Windows.Forms.Button();
             this.removeFilterButton = new System.Windows.Forms.Button();
+            this.ReturnToUserPanelPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // questionsDataGridView
@@ -63,7 +66,7 @@
             // levelsComboBox
             // 
             this.levelsComboBox.FormattingEnabled = true;
-            this.levelsComboBox.Location = new System.Drawing.Point(447, 418);
+            this.levelsComboBox.Location = new System.Drawing.Point(189, 418);
             this.levelsComboBox.MaxDropDownItems = 5;
             this.levelsComboBox.Name = "levelsComboBox";
             this.levelsComboBox.Size = new System.Drawing.Size(140, 21);
@@ -76,7 +79,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(469, 384);
+            this.label3.Location = new System.Drawing.Point(214, 384);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 31);
             this.label3.TabIndex = 4;
@@ -88,10 +91,10 @@
             this.apllyFilterButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.apllyFilterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.apllyFilterButton.ForeColor = System.Drawing.Color.Black;
-            this.apllyFilterButton.Location = new System.Drawing.Point(747, 393);
+            this.apllyFilterButton.Location = new System.Drawing.Point(189, 456);
             this.apllyFilterButton.Margin = new System.Windows.Forms.Padding(0);
             this.apllyFilterButton.Name = "apllyFilterButton";
-            this.apllyFilterButton.Size = new System.Drawing.Size(128, 46);
+            this.apllyFilterButton.Size = new System.Drawing.Size(140, 46);
             this.apllyFilterButton.TabIndex = 5;
             this.apllyFilterButton.Text = "Apply filter";
             this.apllyFilterButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -104,7 +107,7 @@
             this.removeFilterButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeFilterButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.removeFilterButton.ForeColor = System.Drawing.Color.Black;
-            this.removeFilterButton.Location = new System.Drawing.Point(747, 456);
+            this.removeFilterButton.Location = new System.Drawing.Point(343, 456);
             this.removeFilterButton.Margin = new System.Windows.Forms.Padding(0);
             this.removeFilterButton.Name = "removeFilterButton";
             this.removeFilterButton.Size = new System.Drawing.Size(128, 46);
@@ -115,6 +118,19 @@
             this.removeFilterButton.Visible = false;
             this.removeFilterButton.Click += new System.EventHandler(this.FilterButtonRemove_Click);
             // 
+            // ReturnToUserPanelPictureBox
+            // 
+            this.ReturnToUserPanelPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ReturnToUserPanelPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.home;
+            this.ReturnToUserPanelPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ReturnToUserPanelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReturnToUserPanelPictureBox.Location = new System.Drawing.Point(826, 7);
+            this.ReturnToUserPanelPictureBox.Name = "ReturnToUserPanelPictureBox";
+            this.ReturnToUserPanelPictureBox.Size = new System.Drawing.Size(77, 64);
+            this.ReturnToUserPanelPictureBox.TabIndex = 15;
+            this.ReturnToUserPanelPictureBox.TabStop = false;
+            this.ReturnToUserPanelPictureBox.Click += new System.EventHandler(this.ReturnToUserPanelPictureBox_Click);
+            // 
             // QuestionsPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -122,6 +138,7 @@
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.panelBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(915, 511);
+            this.Controls.Add(this.ReturnToUserPanelPictureBox);
             this.Controls.Add(this.removeFilterButton);
             this.Controls.Add(this.apllyFilterButton);
             this.Controls.Add(this.label3);
@@ -129,12 +146,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.questionsDataGridView);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QuestionsPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanel_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +166,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button apllyFilterButton;
         private System.Windows.Forms.Button removeFilterButton;
+        private System.Windows.Forms.PictureBox ReturnToUserPanelPictureBox;
     }
 }

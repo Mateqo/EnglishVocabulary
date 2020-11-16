@@ -28,9 +28,12 @@ namespace EnglishVocabulary
 
         private void StartQuizLabel_Click(object sender, EventArgs e)
         {
-            quizForm = new QuizForm(questionService, this);
-            this.Visible = false;
-            quizForm.ShowDialog();
+            if (questionService.IsAnyQuestion())
+            {
+                quizForm = new QuizForm(questionService, this);
+                this.Visible = false;
+                quizForm.ShowDialog();
+            }
         }
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)
@@ -54,8 +57,22 @@ namespace EnglishVocabulary
             removeQuestionForm.ShowDialog();
         }
 
-        private void ReturnToStartView_FormClosed(object sender, FormClosedEventArgs e)
+        private void UpdateProgressTimer_Tick(object sender, EventArgs e)
         {
+            completedTasksProgressBar.Value = questionService.UpdateProgress();
+            progressPercentLabel.Text = completedTasksProgressBar.Value + " %";
+        }
+
+        private void RestartProgressPictureBox_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show($"Do you want to restart progress?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+                questionService.RestartProgress();
+        }
+
+        private void ReturnToStartViewLabel_Click(object sender, EventArgs e)
+        {
+            this.Close();
             startViewForm.Visible = true;
         }
 

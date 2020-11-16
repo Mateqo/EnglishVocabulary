@@ -59,7 +59,7 @@ namespace EnglishVocabulary
             var questionDeleted = Questions.Find(x => x.Id == id);
             questionDeleted.IsDeleted = true;
 
-            return false;
+            return true;
         }
 
         public int LoadQuestion(Label labelQuestion, Button answerButton1, Button answerButton2, Button answerButton3, Button answerButton4)
@@ -126,5 +126,31 @@ namespace EnglishVocabulary
 
             return false;
         }
+
+        public int UpdateProgress()
+        {
+            int listAllQuestions = Questions.Where(x => x.IsDeleted != true).Count();
+            int listCorrectQuestions = Questions.Where(x => x.IsDeleted != true && x.IsCorrectAnswer == true).Count();
+
+            int percentProgress = (listCorrectQuestions * 100) / listAllQuestions;
+
+            return percentProgress;
+        }
+
+        public void RestartProgress()
+        {
+            Questions.Where(x => x.IsDeleted != true && x.IsCorrectAnswer == true).ToList().ForEach(x => x.IsCorrectAnswer = false);
+        }
+
+        public bool IsAnyQuestion()
+        {
+            int count = Questions.Where(x => x.IsDeleted != true).Count();
+
+            if (count>0)
+                return true;
+
+                return false;
+        }
+
     }
 }

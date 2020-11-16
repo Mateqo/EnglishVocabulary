@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartViewForm));
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.startPictureBox = new System.Windows.Forms.PictureBox();
+            this.quitAppPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quitAppPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLabel
@@ -58,20 +61,36 @@
             this.startPictureBox.TabStop = false;
             this.startPictureBox.Click += new System.EventHandler(this.UserPanelPictureBoxStart_Click);
             // 
-            // StartView
+            // quitAppPictureBox
+            // 
+            this.quitAppPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.quitAppPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.quit;
+            this.quitAppPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.quitAppPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quitAppPictureBox.Location = new System.Drawing.Point(702, 433);
+            this.quitAppPictureBox.Name = "quitAppPictureBox";
+            this.quitAppPictureBox.Size = new System.Drawing.Size(70, 66);
+            this.quitAppPictureBox.TabIndex = 2;
+            this.quitAppPictureBox.TabStop = false;
+            this.quitAppPictureBox.Click += new System.EventHandler(this.QuitApp_Click);
+            // 
+            // StartViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.startBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 511);
+            this.Controls.Add(this.quitAppPictureBox);
             this.Controls.Add(this.startPictureBox);
             this.Controls.Add(this.welcomeLabel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "StartView";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "StartViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English Vocabulary";
             ((System.ComponentModel.ISupportInitialize)(this.startPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quitAppPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +100,7 @@
 
         private System.Windows.Forms.Label welcomeLabel;
         private System.Windows.Forms.PictureBox startPictureBox;
+        private System.Windows.Forms.PictureBox quitAppPictureBox;
     }
 }
 

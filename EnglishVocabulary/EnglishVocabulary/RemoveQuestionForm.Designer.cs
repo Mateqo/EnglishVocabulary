@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemoveQuestionForm));
             this.label1 = new System.Windows.Forms.Label();
             this.questionsDataGridView = new System.Windows.Forms.DataGridView();
             this.removeQuestionButton = new System.Windows.Forms.Button();
             this.selectedQuestionLabel = new System.Windows.Forms.Label();
+            this.ReturnToUserPanelPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +86,19 @@
             this.selectedQuestionLabel.Size = new System.Drawing.Size(0, 34);
             this.selectedQuestionLabel.TabIndex = 6;
             // 
+            // ReturnToUserPanelPictureBox
+            // 
+            this.ReturnToUserPanelPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ReturnToUserPanelPictureBox.BackgroundImage = global::EnglishVocabulary.Properties.Resources.home;
+            this.ReturnToUserPanelPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ReturnToUserPanelPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ReturnToUserPanelPictureBox.Location = new System.Drawing.Point(819, 12);
+            this.ReturnToUserPanelPictureBox.Name = "ReturnToUserPanelPictureBox";
+            this.ReturnToUserPanelPictureBox.Size = new System.Drawing.Size(77, 64);
+            this.ReturnToUserPanelPictureBox.TabIndex = 16;
+            this.ReturnToUserPanelPictureBox.TabStop = false;
+            this.ReturnToUserPanelPictureBox.Click += new System.EventHandler(this.ReturnToUserPanelPictureBox_Click);
+            // 
             // RemoveQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,18 +106,20 @@
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.panelBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(908, 531);
+            this.Controls.Add(this.ReturnToUserPanelPictureBox);
             this.Controls.Add(this.selectedQuestionLabel);
             this.Controls.Add(this.removeQuestionButton);
             this.Controls.Add(this.questionsDataGridView);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RemoveQuestionForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "English vocabulary";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReturnToUserPanel_FormClosed);
             this.Load += new System.EventHandler(this.UnselectDefault_Load);
             ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnToUserPanelPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +131,6 @@
         private System.Windows.Forms.DataGridView questionsDataGridView;
         private System.Windows.Forms.Button removeQuestionButton;
         private System.Windows.Forms.Label selectedQuestionLabel;
+        private System.Windows.Forms.PictureBox ReturnToUserPanelPictureBox;
     }
 }

@@ -65,8 +65,9 @@ namespace EnglishVocabulary
             }
         }
 
-        private void ReturnToUserPanel_FormClosed(object sender, FormClosedEventArgs e)
+        private void ReturnToUserPanelPictureBox_Click(object sender, EventArgs e)
         {
+            this.Close();
             userPanelForm.Visible = true;
         }
 
