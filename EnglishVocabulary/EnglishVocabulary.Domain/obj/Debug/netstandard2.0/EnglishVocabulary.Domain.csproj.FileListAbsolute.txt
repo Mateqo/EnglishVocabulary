@@ -1,0 +1,9 @@
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\EnglishVocabulary.Domain.deps.json
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\EnglishVocabulary.Domain.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\EnglishVocabulary.Domain.pdb
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.csprojAssemblyReference.cache
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.AssemblyInfoInputs.cache
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.AssemblyInfo.cs
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.csproj.CoreCompileInputs.cache
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.pdb

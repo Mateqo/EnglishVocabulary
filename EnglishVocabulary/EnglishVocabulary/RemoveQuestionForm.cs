@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnglishVocabulary.App.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,8 @@ namespace EnglishVocabulary
             this.userPanelForm = userPanelForm;
             questionsDataGridView.DataSource = questionService.ShowAllQuestions();
             questionsDataGridView.Columns["IsDeleted"].Visible = false;
+            questionsDataGridView.Columns["CreatedDateTime"].Visible = false;
+            questionsDataGridView.Columns["DeletedDateTime"].Visible = false;
         }
 
         private void ShowSelectedQuestion_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -32,11 +35,11 @@ namespace EnglishVocabulary
             {
                 DataGridViewRow selectedRow = questionsDataGridView.Rows[indexSelectedRow];
                 selectedQuestionLabel.Text = String.Format("[{0}] {1} - {2} ({3})",
+                selectedRow.Cells[6].Value.ToString(),
                 selectedRow.Cells[0].Value.ToString(),
                 selectedRow.Cells[1].Value.ToString(),
-                selectedRow.Cells[2].Value.ToString(),
-                selectedRow.Cells[3].Value.ToString());
-                indexSelectedQuestion = Convert.ToInt32(selectedRow.Cells[0].Value);
+                selectedRow.Cells[2].Value.ToString());
+                indexSelectedQuestion = Convert.ToInt32(selectedRow.Cells[6].Value);
             }
         }
 

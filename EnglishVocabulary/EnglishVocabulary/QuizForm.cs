@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EnglishVocabulary.App.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,23 +33,31 @@ namespace EnglishVocabulary
 
         private void NextQuestionPictureBox_Click(object sender, EventArgs e)
         {
-            nextQuestionPictureBox.Visible = false;
-            veryficationPictureBox.Visible = false;
-            veryficationLabel.Visible = false;
+            if (!questionService.IsAnyQuestion())
+            {
+                this.Close();
+                userPanelForm.Visible = true;
+            }
+            else
+            {
+                nextQuestionPictureBox.Visible = false;
+                veryficationPictureBox.Visible = false;
+                veryficationLabel.Visible = false;
 
-            answerButton1.BackColor = Color.PapayaWhip;
-            answerButton2.BackColor = Color.PapayaWhip;
-            answerButton3.BackColor = Color.PapayaWhip;
-            answerButton4.BackColor = Color.PapayaWhip;
+                answerButton1.BackColor = Color.PapayaWhip;
+                answerButton2.BackColor = Color.PapayaWhip;
+                answerButton3.BackColor = Color.PapayaWhip;
+                answerButton4.BackColor = Color.PapayaWhip;
 
-            actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+                actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
 
-            answerTime = TimeToAnswer;
-            timeLabel.Text = answerTime.ToString();
-            answerTimer.Start();
+                answerTime = TimeToAnswer;
+                timeLabel.Text = answerTime.ToString();
+                answerTimer.Start();
 
-            completedTasksProgressBar.Value = questionService.UpdateProgress();
-            progressPercentLabel.Text = completedTasksProgressBar.Value+" %";
+                completedTasksProgressBar.Value = questionService.UpdateProgress();
+                progressPercentLabel.Text = completedTasksProgressBar.Value + " %";
+            }
         }
 
         private void AnswerTimer_Tick(object sender, EventArgs e)
@@ -81,9 +90,15 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton1, actualIdQuestion);
 
                 if (status)
-                    designService.CorrectQuestion(answerButton1,veryficationLabel,veryficationPictureBox);
+                {
+                    designService.CorrectQuestion(answerButton1, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.correct;
+                }
                 else
+                {
                     designService.WrongQuestion(answerButton1, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.wrong;
+                }
 
                 nextQuestionPictureBox.Visible = true;
                 answerTimer.Stop();
@@ -97,9 +112,15 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton2, actualIdQuestion);
 
                 if (status)
+                {
                     designService.CorrectQuestion(answerButton2, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.correct;
+                }
                 else
+                {
                     designService.WrongQuestion(answerButton2, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.wrong;
+                }
 
                 nextQuestionPictureBox.Visible = true;
                 answerTimer.Stop();
@@ -113,9 +134,15 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton3, actualIdQuestion);
 
                 if (status)
+                {
                     designService.CorrectQuestion(answerButton3, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.correct;
+                }
                 else
+                {
                     designService.WrongQuestion(answerButton3, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.wrong;
+                }
 
                 nextQuestionPictureBox.Visible = true;
                 answerTimer.Stop();
@@ -129,9 +156,15 @@ namespace EnglishVocabulary
                 bool status = questionService.CheckAnswer(answerButton4, actualIdQuestion);
 
                 if (status)
+                {
                     designService.CorrectQuestion(answerButton4, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.correct;
+                }
                 else
+                {
                     designService.WrongQuestion(answerButton4, veryficationLabel, veryficationPictureBox);
+                    veryficationPictureBox.Image = Properties.Resources.wrong;
+                }
 
                 nextQuestionPictureBox.Visible = true;
                 answerTimer.Stop();

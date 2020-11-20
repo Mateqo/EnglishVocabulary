@@ -13,3 +13,8 @@ D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVo
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.AddNewQuestionForm.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.RemoveQuestionForm.resources
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.QuizForm.resources
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.App.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.Domain.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.App.pdb
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\bin\Debug\EnglishVocabulary.Domain.pdb
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary\obj\Debug\EnglishVocabulary.csproj.CopyComplete

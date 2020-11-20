@@ -48,7 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,14 +71,11 @@
     <Compile Include="AddNewQuestionForm.Designer.cs">
       <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DesignService.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Question.cs" />
-    <Compile Include="QuestionService.cs" />
     <Compile Include="QuestionsPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,7 +108,6 @@
     <Compile Include="UserPanelForm.Designer.cs">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ValidationService.cs" />
     <EmbeddedResource Include="AddNewQuestionForm.resx">
       <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,45 +140,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\startBg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\start.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\panelBg.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\info.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\clock.png" />
     <None Include="Resources\correct.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\home.png" />
+    <None Include="Resources\icon.ico" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\panelBg.jpeg" />
+    <None Include="Resources\quit.png" />
+    <None Include="Resources\restart.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\startBg.jpg" />
     <None Include="Resources\wrong.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\clock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\next.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\restart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\quit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.ico" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -194,6 +167,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EnglishVocabulary.App\EnglishVocabulary.App.csproj">
+      <Project>{b48e141c-c0ff-4d94-a22b-1168407d61db}</Project>
+      <Name>EnglishVocabulary.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnglishVocabulary.Domain\EnglishVocabulary.Domain.csproj">
+      <Project>{66aa3015-c112-4a3b-b3de-9e4ec930a595}</Project>
+      <Name>EnglishVocabulary.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
