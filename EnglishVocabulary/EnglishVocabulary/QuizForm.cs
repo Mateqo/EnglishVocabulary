@@ -37,6 +37,7 @@ namespace EnglishVocabulary
             {
                 this.Close();
                 userPanelForm.Visible = true;
+                answerTimer.Stop();
             }
             else
             {
@@ -79,6 +80,7 @@ namespace EnglishVocabulary
         {
             this.Close();
             userPanelForm.Visible = true;
+            answerTimer.Stop();
         }
 
         #region check answer

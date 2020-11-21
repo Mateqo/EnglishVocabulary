@@ -20,6 +20,7 @@ namespace EnglishVocabulary.App.Abstract
         bool CheckAnswer(Button answerButton, int id);     
         void RestartProgress();
         bool IsAnyQuestion();
+        bool IsEnoughToQuiz();
 
     }
 }

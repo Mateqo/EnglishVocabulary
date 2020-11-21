@@ -28,12 +28,14 @@ namespace EnglishVocabulary
 
         private void StartQuizLabel_Click(object sender, EventArgs e)
         {
-            if (questionService.IsAnyQuestion())
+            if (questionService.IsAnyQuestion() && questionService.IsEnoughToQuiz())
             {
                 quizForm = new QuizForm(questionService, this);
                 this.Visible = false;
                 quizForm.ShowDialog();
             }
+            else
+                MessageBox.Show("Not enough questions or all completed");
         }
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)

@@ -75,6 +75,10 @@ namespace EnglishVocabulary.App.Concrete
             labelQuestion.Text = "\"" + randomQuestion.Content + "\"";
 
             List<Button> listOfButtons = new List<Button>();
+            answerButton1.Text = "";
+            answerButton2.Text = "";
+            answerButton3.Text = "";
+            answerButton4.Text = "";
             listOfButtons.Add(answerButton1);
             listOfButtons.Add(answerButton2);
             listOfButtons.Add(answerButton3);
@@ -155,6 +159,16 @@ namespace EnglishVocabulary.App.Concrete
             return false;
         }
 
+        public bool IsEnoughToQuiz()
+        {
+            int count = Questions.Where(x => x.IsDeleted != true).Count();
+
+            if (count > 3)
+                return true;
+
+            return false;
+        }
+
         public void Initialize()
         {
             AddNewQuestion("samochód", "car", "easy");
@@ -162,7 +176,7 @@ namespace EnglishVocabulary.App.Concrete
             AddNewQuestion("kwiat", "flower", "easy");
             AddNewQuestion("pies", "dog", "easy");
             AddNewQuestion("pokój", "room", "easy");
-            /*AddNewQuestion("zapach", "smell", "easy");
+            AddNewQuestion("zapach", "smell", "easy");
             AddNewQuestion("dotyk", "touch", "easy");
             AddNewQuestion("wzrok", "eyesight", "easy");
             AddNewQuestion("trawnik", "lawn", "easy");
@@ -189,7 +203,7 @@ namespace EnglishVocabulary.App.Concrete
              AddNewQuestion("likwidacja spółki", "dissolution", "hard");
              AddNewQuestion("współpracownik", "associate", "hard");
              AddNewQuestion("uspokojony", "relieved", "hard");
-             AddNewQuestion("tajniak", "sleuth", "hard");*/
+             AddNewQuestion("tajniak", "sleuth", "hard");
         }
     }
 }
