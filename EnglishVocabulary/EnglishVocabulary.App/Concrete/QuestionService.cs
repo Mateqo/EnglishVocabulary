@@ -1,6 +1,7 @@
 ﻿using EnglishVocabulary.App.Abstract;
 using EnglishVocabulary.Domain.Common;
 using EnglishVocabulary.Domain.Entity;
+using EnglishVocabulary.Domain.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,15 @@ namespace EnglishVocabulary.App.Concrete
             Initialize();
         }
 
-        public void AddNewQuestion(string content, string answer, string level)
+        public int AddNewQuestion(string content, string answer, string level)
         {
             int newId = Questions.Count() + 1;
 
             Question question = new Question(newId, content.ToLower(), level.ToLower(), answer.ToLower());
 
             Questions.Add(question);
+
+            return newId;
         }
 
         public List<Question> ShowAllQuestions()
@@ -60,36 +63,35 @@ namespace EnglishVocabulary.App.Concrete
         public bool DeleteQuestionById(int id)
         {
             var questionDeleted = Questions.Find(x => x.Id == id);
-            questionDeleted.IsDeleted = true;
-
-            return true;
+            if (questionDeleted != null)
+            {
+                questionDeleted.IsDeleted = true;
+                return true;
+            }
+            else
+                return false;
         }
 
-        public int LoadQuestion(Label labelQuestion, Button answerButton1, Button answerButton2, Button answerButton3, Button answerButton4)
+        public int LoadQuestion(LoadQuestionVM loadQuestionVM)
         {
             Random rnd = new Random();
             var questionToDo = Questions.Where(x => x.IsDeleted == false && x.IsCorrectAnswer != true).ToList();
             var id = rnd.Next(questionToDo.Count);
             var randomQuestion = questionToDo[id];
 
-            labelQuestion.Text = "\"" + randomQuestion.Content + "\"";
+            loadQuestionVM.Question.Text = "\"" + randomQuestion.Content + "\"";
 
-            List<Button> listOfButtons = new List<Button>();
-            answerButton1.Text = "";
-            answerButton2.Text = "";
-            answerButton3.Text = "";
-            answerButton4.Text = "";
-            listOfButtons.Add(answerButton1);
-            listOfButtons.Add(answerButton2);
-            listOfButtons.Add(answerButton3);
-            listOfButtons.Add(answerButton4);
+            for (int i = 0; i < loadQuestionVM.Answers.Count(); i++)
+            {
+                loadQuestionVM.Answers[i].Text = "";
+            }
 
-            var idButton = rnd.Next(listOfButtons.Count);
-            var randomButton = listOfButtons[idButton];
 
-            randomButton.Text = randomQuestion.Answer;
+            var idButton = rnd.Next(loadQuestionVM.Answers.Count);
+            loadQuestionVM.Answers[idButton].Text = randomQuestion.Answer;
 
-            var randomAnswers = Questions.Where(x => x.IsDeleted == false && x.Id != randomQuestion.Id).Select(x=>x.Answer).ToList();
+
+            var randomAnswers = Questions.Where(x => x.IsDeleted == false && x.Id != randomQuestion.Id).Select(x => x.Answer).ToList();
 
             var idRandomAnswers1 = rnd.Next(randomAnswers.Count);
             string badAnswer1 = randomAnswers[idRandomAnswers1];
@@ -104,26 +106,26 @@ namespace EnglishVocabulary.App.Concrete
             randomAnswers.RemoveAt(idRandomAnswers3);
 
             string[] badAnswers = { badAnswer1, badAnswer2, badAnswer3 };
-            int i = 0;
+            int idBadAnswer = 0;
 
-            foreach (var button in listOfButtons)
+            for (int i = 0; i < loadQuestionVM.Answers.Count(); i++)
             {
-                if (button.Text != randomButton.Text)
+                if (loadQuestionVM.Answers[i].Text == "")
                 {
-                    button.Text = badAnswers[i];
-                    i++;
+                    loadQuestionVM.Answers[i].Text = badAnswers[idBadAnswer];
+                    idBadAnswer++;
                 }
             }
 
             return randomQuestion.Id;
         }
 
-        public bool CheckAnswer(Button answerButton, int id)
+        public bool CheckAnswer(string answerButton, int id)
         {
             var actualQuestion = ShowQuestionById(id);
-            actualQuestion.Choice = answerButton.Text;
+            actualQuestion.Choice = answerButton;
 
-            if (answerButton.Text == actualQuestion.Answer)
+            if (answerButton == actualQuestion.Answer)
             {
                 actualQuestion.IsCorrectAnswer = true;
                 return true;
@@ -151,7 +153,7 @@ namespace EnglishVocabulary.App.Concrete
 
         public bool IsAnyQuestion()
         {
-            int count = Questions.Where(x => x.IsDeleted != true && x.IsCorrectAnswer==false).Count();
+            int count = Questions.Where(x => x.IsDeleted != true && x.IsCorrectAnswer == false).Count();
 
             if (count > 0)
                 return true;
@@ -182,28 +184,28 @@ namespace EnglishVocabulary.App.Concrete
             AddNewQuestion("trawnik", "lawn", "easy");
             AddNewQuestion("lodówka", "fridge", "easy");
             AddNewQuestion("przewodniczący klasy", "prefect", "medium");
-             AddNewQuestion("nieobecność", "absence", "medium");
-             AddNewQuestion("nadużywać", "abuse", "medium");
-             AddNewQuestion("krzew", "bush", "medium");
-             AddNewQuestion("zdolność", "capacity", "medium");
-             AddNewQuestion("wózek", "cart", "medium");
-             AddNewQuestion("przyłapać", "catch", "medium");
-             AddNewQuestion("powodować", "cause", "medium");
-             AddNewQuestion("pewność siebie", "confidence", "medium");
-             AddNewQuestion("zamieszanie", "confusion", "medium");
-             AddNewQuestion("nieuchwytny", "elusive", "hard");
-             AddNewQuestion("śluza", "floodgate", "hard");
-             AddNewQuestion("piesza wycieczka", "hike", "hard");
-             AddNewQuestion("zrzeczenie się", "waiver", "hard");
-             AddNewQuestion("wypowiedzenie", "termination", "hard");
-             AddNewQuestion("spółka zależna", "subsidiary", "hard");
-             AddNewQuestion("opłaty", "surcharges", "hard");
-             AddNewQuestion("CV", "resume", "hard");
-             AddNewQuestion("kapitał", "asset", "hard");
-             AddNewQuestion("likwidacja spółki", "dissolution", "hard");
-             AddNewQuestion("współpracownik", "associate", "hard");
-             AddNewQuestion("uspokojony", "relieved", "hard");
-             AddNewQuestion("tajniak", "sleuth", "hard");
+            AddNewQuestion("nieobecność", "absence", "medium");
+            AddNewQuestion("nadużywać", "abuse", "medium");
+            AddNewQuestion("krzew", "bush", "medium");
+            AddNewQuestion("zdolność", "capacity", "medium");
+            AddNewQuestion("wózek", "cart", "medium");
+            AddNewQuestion("przyłapać", "catch", "medium");
+            AddNewQuestion("powodować", "cause", "medium");
+            AddNewQuestion("pewność siebie", "confidence", "medium");
+            AddNewQuestion("zamieszanie", "confusion", "medium");
+            AddNewQuestion("nieuchwytny", "elusive", "hard");
+            AddNewQuestion("śluza", "floodgate", "hard");
+            AddNewQuestion("piesza wycieczka", "hike", "hard");
+            AddNewQuestion("zrzeczenie się", "waiver", "hard");
+            AddNewQuestion("wypowiedzenie", "termination", "hard");
+            AddNewQuestion("spółka zależna", "subsidiary", "hard");
+            AddNewQuestion("opłaty", "surcharges", "hard");
+            AddNewQuestion("CV", "resume", "hard");
+            AddNewQuestion("kapitał", "asset", "hard");
+            AddNewQuestion("likwidacja spółki", "dissolution", "hard");
+            AddNewQuestion("współpracownik", "associate", "hard");
+            AddNewQuestion("uspokojony", "relieved", "hard");
+            AddNewQuestion("tajniak", "sleuth", "hard");
         }
     }
 }

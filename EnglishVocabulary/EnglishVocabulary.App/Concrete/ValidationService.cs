@@ -12,17 +12,17 @@ namespace EnglishVocabulary.App.Concrete
         Regex properlyPolishWorld = new Regex("^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$");
         Regex properlyEnglishWorld = new Regex("^[A-Za-z]+$");
 
-        public bool CheckPolishWorld(TextBox textBox)
+        public bool CheckPolishWorld(string world)
         {
-            if (properlyPolishWorld.IsMatch(textBox.Text))
+            if (properlyPolishWorld.IsMatch(world))
                 return true;
 
             return false;
         }
 
-        public bool CheckEnglishWorld(TextBox textBox)
+        public bool CheckEnglishWorld(string world)
         {
-            if (properlyEnglishWorld.IsMatch(textBox.Text))
+            if (properlyEnglishWorld.IsMatch(world))
                 return true;
 
             return false;

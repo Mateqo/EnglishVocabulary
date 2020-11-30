@@ -7,3 +7,16 @@ D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVo
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.csproj.CoreCompileInputs.cache
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.dll
 D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.pdb
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Windows.Forms.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Security.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Configuration.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\Accessibility.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Deployment.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Windows.Forms.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Security.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Configuration.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\Accessibility.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Deployment.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+D:\Users\User\Desktop\repozytorium\EnglishVocabulary\EnglishVocabulary\EnglishVocabulary.Domain\obj\Debug\netstandard2.0\EnglishVocabulary.Domain.csproj.CopyComplete

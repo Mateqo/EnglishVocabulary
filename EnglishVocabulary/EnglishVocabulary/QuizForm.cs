@@ -1,4 +1,5 @@
 ﻿using EnglishVocabulary.App.Concrete;
+using EnglishVocabulary.Domain.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +20,23 @@ namespace EnglishVocabulary
         UserPanelForm userPanelForm;
         int actualIdQuestion;
         int answerTime = TimeToAnswer;
+        List<Button> answerButtons;
+        LoadQuestionVM loadQuestionView;
 
         public QuizForm(QuestionService questionService, UserPanelForm userPanelForm)
         {
             InitializeComponent();
             this.questionService = questionService;
             this.userPanelForm = userPanelForm;
-            actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+
+            answerButtons = new List<Button>();  
+            answerButtons.Add(answerButton1);
+            answerButtons.Add(answerButton2);
+            answerButtons.Add(answerButton3);
+            answerButtons.Add(answerButton4);
+
+            loadQuestionView = new LoadQuestionVM(questionLabel,answerButtons);
+            actualIdQuestion = questionService.LoadQuestion(loadQuestionView);
             answerTimer.Start();
             completedTasksProgressBar.Value = questionService.UpdateProgress();
             progressPercentLabel.Text = completedTasksProgressBar.Value + " %";
@@ -50,7 +61,7 @@ namespace EnglishVocabulary
                 answerButton3.BackColor = Color.PapayaWhip;
                 answerButton4.BackColor = Color.PapayaWhip;
 
-                actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+                actualIdQuestion = questionService.LoadQuestion(loadQuestionView);
 
                 answerTime = TimeToAnswer;
                 timeLabel.Text = answerTime.ToString();
@@ -69,7 +80,7 @@ namespace EnglishVocabulary
             }
             else
             {
-                actualIdQuestion = questionService.LoadQuestion(questionLabel, answerButton1, answerButton2, answerButton3, answerButton4);
+                actualIdQuestion = questionService.LoadQuestion(loadQuestionView);
                 answerTime = TimeToAnswer;
             }
 
@@ -89,7 +100,7 @@ namespace EnglishVocabulary
         {
             if (nextQuestionPictureBox.Visible == false)
             {
-                bool status = questionService.CheckAnswer(answerButton1, actualIdQuestion);
+                bool status = questionService.CheckAnswer(answerButton1.Text, actualIdQuestion);
 
                 if (status)
                 {
@@ -111,7 +122,7 @@ namespace EnglishVocabulary
         {
             if (nextQuestionPictureBox.Visible == false)
             {
-                bool status = questionService.CheckAnswer(answerButton2, actualIdQuestion);
+                bool status = questionService.CheckAnswer(answerButton2.Text, actualIdQuestion);
 
                 if (status)
                 {
@@ -133,7 +144,7 @@ namespace EnglishVocabulary
         {
             if (nextQuestionPictureBox.Visible == false)
             {
-                bool status = questionService.CheckAnswer(answerButton3, actualIdQuestion);
+                bool status = questionService.CheckAnswer(answerButton3.Text, actualIdQuestion);
 
                 if (status)
                 {
@@ -155,7 +166,7 @@ namespace EnglishVocabulary
         {
             if (nextQuestionPictureBox.Visible == false)
             {
-                bool status = questionService.CheckAnswer(answerButton4, actualIdQuestion);
+                bool status = questionService.CheckAnswer(answerButton4.Text, actualIdQuestion);
 
                 if (status)
                 {

@@ -1,4 +1,5 @@
 ﻿using EnglishVocabulary.Domain.Entity;
+using EnglishVocabulary.Domain.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,14 +11,14 @@ namespace EnglishVocabulary.App.Abstract
     {
         List<Question> Questions { get; set; }
 
-        void AddNewQuestion(string content, string answer, string level);
+        int AddNewQuestion(string content, string answer, string level);
         List<Question> ShowAllQuestions();
         void ShowAllLevels(ComboBox levelsComboBox);
         List<Question> ShowQuestionsByLevel(string filtr);
         Question ShowQuestionById(int id);
         bool DeleteQuestionById(int id);
-        int LoadQuestion(Label labelQuestion, Button answerButton1, Button answerButton2, Button answerButton3, Button answerButton4);
-        bool CheckAnswer(Button answerButton, int id);     
+        int LoadQuestion(LoadQuestionVM loadQuestionVM);
+        bool CheckAnswer(string answerButton, int id);     
         void RestartProgress();
         bool IsAnyQuestion();
         bool IsEnoughToQuiz();

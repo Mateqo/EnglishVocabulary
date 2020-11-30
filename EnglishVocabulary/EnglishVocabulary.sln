@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishVocabulary", "EnglishVocabulary\EnglishVocabulary.csproj", "{1C126719-E805-4D1D-8A21-1B6F91A80D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishVocabulary.App", "EnglishVocabulary.App\EnglishVocabulary.App.csproj", "{B48E141C-C0FF-4D94-A22B-1168407D61DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnglishVocabulary.App", "EnglishVocabulary.App\EnglishVocabulary.App.csproj", "{B48E141C-C0FF-4D94-A22B-1168407D61DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishVocabulary.Domain", "EnglishVocabulary.Domain\EnglishVocabulary.Domain.csproj", "{66AA3015-C112-4A3B-B3DE-9E4EC930A595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnglishVocabulary.Domain", "EnglishVocabulary.Domain\EnglishVocabulary.Domain.csproj", "{66AA3015-C112-4A3B-B3DE-9E4EC930A595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnglishVocabulary.Tests", "EnglishVocabulary.Tests\EnglishVocabulary.Tests.csproj", "{CE90DD81-59B4-4B43-9D10-02327D15952B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{66AA3015-C112-4A3B-B3DE-9E4EC930A595}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66AA3015-C112-4A3B-B3DE-9E4EC930A595}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66AA3015-C112-4A3B-B3DE-9E4EC930A595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE90DD81-59B4-4B43-9D10-02327D15952B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE90DD81-59B4-4B43-9D10-02327D15952B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE90DD81-59B4-4B43-9D10-02327D15952B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE90DD81-59B4-4B43-9D10-02327D15952B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
