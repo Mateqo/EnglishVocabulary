@@ -10,30 +10,42 @@ namespace EnglishVocabulary.Tests
     public class ValidationServiceTests
     {
         [Fact]
-        public void CheckPolishWorld()
+        public void CheckPolishWordWithProperWord()
         {
             //Arrange
-            string world = "鄴單";
-            string world2 = "鄴單45";
-            string world3 = "45鄴單";
-            string world4 = "鄴45單";
-            string world5 = "45";
-            string world6 = "";
-            string world7 = "test%";
+            string word = "鄴單";
 
             ValidationService validationService = new ValidationService();
 
             //Act
-            bool properWorld = validationService.CheckPolishWorld(world);
-            bool numbersAtTheEnd = validationService.CheckPolishWorld(world2);
-            bool numbersAtTheBeginning = validationService.CheckPolishWorld(world3);
-            bool numbersInside = validationService.CheckPolishWorld(world4);
-            bool onlyNumbers = validationService.CheckPolishWorld(world5);
-            bool nothing = validationService.CheckPolishWorld(world6);
-            bool specialSigns = validationService.CheckPolishWorld(world7);
+            bool properWord = validationService.CheckPolishWord(word);
 
             //Assert
-            properWorld.Should().BeTrue();
+            properWord.Should().BeTrue();
+        }
+
+        [Fact]
+        public void CheckPolishWordWithWrongWord()
+        {
+            //Arrange
+            string word = "鄴單45";
+            string word2 = "45鄴單";
+            string word3 = "鄴45單";
+            string word4= "45";
+            string word5= "";
+            string word6= "test%";
+
+            ValidationService validationService = new ValidationService();
+
+            //Act
+            bool numbersAtTheEnd = validationService.CheckPolishWord(word);
+            bool numbersAtTheBeginning = validationService.CheckPolishWord(word2);
+            bool numbersInside = validationService.CheckPolishWord(word3);
+            bool onlyNumbers = validationService.CheckPolishWord(word4);
+            bool nothing = validationService.CheckPolishWord(word5);
+            bool specialSigns = validationService.CheckPolishWord(word6);
+
+            //Assert
             numbersAtTheEnd.Should().BeFalse();
             numbersAtTheBeginning.Should().BeFalse();
             numbersInside.Should().BeFalse();
@@ -43,33 +55,45 @@ namespace EnglishVocabulary.Tests
         }
 
         [Fact]
-        public void CheckEnglishWorldWithProperWorld()
+        public void CheckEnglishWordWithProperWord()
         {
             //Arrange
-            string world = "car";
-            string world2 = "鄴單";
-            string world3 = "car45";
-            string world4 = "45car";
-            string world5 = "c45ar";
-            string world6 = "45";
-            string world7 = "";
-            string world8 = "car%";
+            string word = "car";
 
             ValidationService validationService = new ValidationService();
 
             //Act
-            bool properWorld = validationService.CheckEnglishWorld(world);
-            bool polishWorld = validationService.CheckEnglishWorld(world2);
-            bool numbersAtTheEnd = validationService.CheckEnglishWorld(world3);
-            bool numbersAtTheBeginning = validationService.CheckEnglishWorld(world4);
-            bool numbersInside = validationService.CheckEnglishWorld(world5);
-            bool onlyNumbers = validationService.CheckEnglishWorld(world6);
-            bool nothing = validationService.CheckEnglishWorld(world7);
-            bool specialSigns = validationService.CheckEnglishWorld(world8);
+            bool properWord = validationService.CheckEnglishWord(word);
 
             //Assert
-            properWorld.Should().BeTrue();
-            polishWorld.Should().BeFalse();
+            properWord.Should().BeTrue();
+        }
+
+        [Fact]
+        public void CheckEnglishWordWithWrongWord()
+        {
+            //Arrange
+            string word = "鄴單";
+            string word2 = "car45";
+            string word3 = "45car";
+            string word4 = "c45ar";
+            string word5 = "45";
+            string word6 = "";
+            string word7 = "car%";
+
+            ValidationService validationService = new ValidationService();
+
+            //Act
+            bool polishWord = validationService.CheckEnglishWord(word);
+            bool numbersAtTheEnd = validationService.CheckEnglishWord(word2);
+            bool numbersAtTheBeginning = validationService.CheckEnglishWord(word3);
+            bool numbersInside = validationService.CheckEnglishWord(word4);
+            bool onlyNumbers = validationService.CheckEnglishWord(word5);
+            bool nothing = validationService.CheckEnglishWord(word6);
+            bool specialSigns = validationService.CheckEnglishWord(word7);
+
+            //Assert
+            polishWord.Should().BeFalse();
             numbersAtTheEnd.Should().BeFalse();
             numbersAtTheBeginning.Should().BeFalse();
             numbersInside.Should().BeFalse();
@@ -77,6 +101,5 @@ namespace EnglishVocabulary.Tests
             nothing.Should().BeFalse();
             specialSigns.Should().BeFalse();
         }
-
     }
 }

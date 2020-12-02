@@ -40,17 +40,17 @@ namespace EnglishVocabulary
         {
             bool status = true;
 
-            if (!validationService.CheckPolishWorld(newQuestionTextBox.Text)|| newQuestionTextBox.Text==PlaceHolderQuestion)
+            if (!validationService.CheckPolishWord(newQuestionTextBox.Text)|| newQuestionTextBox.Text==PlaceHolderQuestion)
             {
                 MessageBox.Show("Incorrect question!", "",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 status = false;
             }
-            else if (!validationService.CheckEnglishWorld(newAnswerTextBox.Text) || newAnswerTextBox.Text == PlaceHolderAnswer)
+            else if (!validationService.CheckEnglishWord(newAnswerTextBox.Text) || newAnswerTextBox.Text == PlaceHolderAnswer)
             {
                 MessageBox.Show("Incorrect answer!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 status = false;
             }
-            else if (!validationService.CheckEnglishWorld(newLevelTextBox.Text))
+            else if (!validationService.CheckEnglishWord(newLevelTextBox.Text))
             {
                 MessageBox.Show("Incorrect level!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 status = false;

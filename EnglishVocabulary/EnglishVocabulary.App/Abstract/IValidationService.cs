@@ -7,8 +7,8 @@ namespace EnglishVocabulary.App.Abstract
 {
     public interface IValidationService
     {
-        bool CheckPolishWorld(string world);
-        bool CheckEnglishWorld(string world);
+        bool CheckPolishWord(string word);
+        bool CheckEnglishWord(string word);
 
     }
 }

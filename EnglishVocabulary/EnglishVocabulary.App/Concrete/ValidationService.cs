@@ -9,20 +9,20 @@ namespace EnglishVocabulary.App.Concrete
 {
     public class ValidationService : IValidationService
     {
-        Regex properlyPolishWorld = new Regex("^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$");
-        Regex properlyEnglishWorld = new Regex("^[A-Za-z]+$");
+        Regex properlyPolishWord = new Regex("^[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$");
+        Regex properlyEnglishWord = new Regex("^[A-Za-z]+$");
 
-        public bool CheckPolishWorld(string world)
+        public bool CheckPolishWord(string word)
         {
-            if (properlyPolishWorld.IsMatch(world))
+            if (properlyPolishWord.IsMatch(word))
                 return true;
 
             return false;
         }
 
-        public bool CheckEnglishWorld(string world)
+        public bool CheckEnglishWord(string word)
         {
-            if (properlyEnglishWorld.IsMatch(world))
+            if (properlyEnglishWord.IsMatch(word))
                 return true;
 
             return false;
