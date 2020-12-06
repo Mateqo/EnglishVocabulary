@@ -14,6 +14,7 @@ namespace EnglishVocabulary
     public partial class UserPanelForm : Form
     {
         QuestionService questionService = new QuestionService();
+        DataService dataService;
         QuizForm quizForm;
         QuestionsPanelForm questionsPanelForm;
         AddNewQuestionForm addNewQuestionForm;
@@ -40,14 +41,14 @@ namespace EnglishVocabulary
 
         private void ShowQuestionsLabel_Click(object sender, EventArgs e)
         {
-            questionsPanelForm = new QuestionsPanelForm(questionService,this);
+            questionsPanelForm = new QuestionsPanelForm(questionService, this);
             this.Visible = false;
-            questionsPanelForm.ShowDialog();         
+            questionsPanelForm.ShowDialog();
         }
 
         private void AddNewQuestionLabel_Click(object sender, EventArgs e)
-        {          
-            addNewQuestionForm = new AddNewQuestionForm(questionService,this);
+        {
+            addNewQuestionForm = new AddNewQuestionForm(questionService, this);
             this.Visible = false;
             addNewQuestionForm.ShowDialog();
         }
@@ -78,7 +79,26 @@ namespace EnglishVocabulary
             startViewForm.Visible = true;
         }
 
+        private void SaveLabel_Click(object sender, EventArgs e)
+        {
+            dataService = new DataService(questionService);
 
+            using (var fbd = new FolderBrowserDialog())
+            {
+
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    var status = dataService.SaveData(fbd.SelectedPath);
+
+                    if (status)
+                        MessageBox.Show("Save Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Something went wrong, please try again.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 
 }

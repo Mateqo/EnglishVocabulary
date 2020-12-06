@@ -41,6 +41,8 @@
             this.checkProgressTimer = new System.Windows.Forms.Timer(this.components);
             this.restartProgressPictureBox = new System.Windows.Forms.PictureBox();
             this.quitLabel = new System.Windows.Forms.Label();
+            this.saveLabel = new System.Windows.Forms.Label();
+            this.loadLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.restartProgressPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +52,7 @@
             this.menuLabel.BackColor = System.Drawing.Color.Transparent;
             this.menuLabel.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuLabel.ForeColor = System.Drawing.Color.Black;
-            this.menuLabel.Location = new System.Drawing.Point(320, 25);
+            this.menuLabel.Location = new System.Drawing.Point(319, 9);
             this.menuLabel.Name = "menuLabel";
             this.menuLabel.Size = new System.Drawing.Size(180, 65);
             this.menuLabel.TabIndex = 0;
@@ -73,7 +75,7 @@
             this.startLearningLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.startLearningLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startLearningLabel.ForeColor = System.Drawing.Color.Black;
-            this.startLearningLabel.Location = new System.Drawing.Point(248, 107);
+            this.startLearningLabel.Location = new System.Drawing.Point(248, 86);
             this.startLearningLabel.Name = "startLearningLabel";
             this.startLearningLabel.Size = new System.Drawing.Size(307, 50);
             this.startLearningLabel.TabIndex = 2;
@@ -87,7 +89,7 @@
             this.showQuestionsLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.showQuestionsLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showQuestionsLabel.ForeColor = System.Drawing.Color.Black;
-            this.showQuestionsLabel.Location = new System.Drawing.Point(248, 181);
+            this.showQuestionsLabel.Location = new System.Drawing.Point(248, 136);
             this.showQuestionsLabel.Name = "showQuestionsLabel";
             this.showQuestionsLabel.Size = new System.Drawing.Size(218, 50);
             this.showQuestionsLabel.TabIndex = 3;
@@ -101,7 +103,7 @@
             this.removeQuestionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.removeQuestionLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeQuestionLabel.ForeColor = System.Drawing.Color.Black;
-            this.removeQuestionLabel.Location = new System.Drawing.Point(248, 321);
+            this.removeQuestionLabel.Location = new System.Drawing.Point(248, 246);
             this.removeQuestionLabel.Name = "removeQuestionLabel";
             this.removeQuestionLabel.Size = new System.Drawing.Size(178, 50);
             this.removeQuestionLabel.TabIndex = 4;
@@ -115,7 +117,7 @@
             this.addNewQuestionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addNewQuestionLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewQuestionLabel.ForeColor = System.Drawing.Color.Black;
-            this.addNewQuestionLabel.Location = new System.Drawing.Point(248, 250);
+            this.addNewQuestionLabel.Location = new System.Drawing.Point(248, 196);
             this.addNewQuestionLabel.Name = "addNewQuestionLabel";
             this.addNewQuestionLabel.Size = new System.Drawing.Size(106, 50);
             this.addNewQuestionLabel.TabIndex = 5;
@@ -174,12 +176,39 @@
             this.quitLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.quitLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quitLabel.ForeColor = System.Drawing.Color.Black;
-            this.quitLabel.Location = new System.Drawing.Point(248, 383);
+            this.quitLabel.Location = new System.Drawing.Point(248, 396);
             this.quitLabel.Name = "quitLabel";
             this.quitLabel.Size = new System.Drawing.Size(112, 50);
             this.quitLabel.TabIndex = 9;
             this.quitLabel.Text = "Quit";
             this.quitLabel.Click += new System.EventHandler(this.ReturnToStartViewLabel_Click);
+            // 
+            // saveLabel
+            // 
+            this.saveLabel.AutoSize = true;
+            this.saveLabel.BackColor = System.Drawing.Color.Transparent;
+            this.saveLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveLabel.ForeColor = System.Drawing.Color.Black;
+            this.saveLabel.Location = new System.Drawing.Point(248, 296);
+            this.saveLabel.Name = "saveLabel";
+            this.saveLabel.Size = new System.Drawing.Size(113, 50);
+            this.saveLabel.TabIndex = 10;
+            this.saveLabel.Text = "Save";
+            this.saveLabel.Click += new System.EventHandler(this.SaveLabel_Click);
+            // 
+            // loadLabel
+            // 
+            this.loadLabel.AutoSize = true;
+            this.loadLabel.BackColor = System.Drawing.Color.Transparent;
+            this.loadLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loadLabel.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadLabel.ForeColor = System.Drawing.Color.Black;
+            this.loadLabel.Location = new System.Drawing.Point(248, 346);
+            this.loadLabel.Name = "loadLabel";
+            this.loadLabel.Size = new System.Drawing.Size(127, 50);
+            this.loadLabel.TabIndex = 11;
+            this.loadLabel.Text = "Load";
             // 
             // UserPanelForm
             // 
@@ -188,6 +217,8 @@
             this.BackgroundImage = global::EnglishVocabulary.Properties.Resources.panelBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 511);
+            this.Controls.Add(this.loadLabel);
+            this.Controls.Add(this.saveLabel);
             this.Controls.Add(this.quitLabel);
             this.Controls.Add(this.restartProgressPictureBox);
             this.Controls.Add(this.progressPercentLabel);
@@ -222,5 +253,7 @@
         private System.Windows.Forms.Timer checkProgressTimer;
         private System.Windows.Forms.PictureBox restartProgressPictureBox;
         private System.Windows.Forms.Label quitLabel;
+        private System.Windows.Forms.Label saveLabel;
+        private System.Windows.Forms.Label loadLabel;
     }
 }
