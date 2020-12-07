@@ -99,6 +99,26 @@ namespace EnglishVocabulary
                 }
             }
         }
+
+        private void LoadLabel_Click(object sender, EventArgs e)
+        {
+            dataService = new DataService(questionService);
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "xml files (*.xml)|*.xml";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var status = dataService.LoadData(openFileDialog.FileName);
+
+                    if (status)
+                        MessageBox.Show("Load Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Something went wrong, please try again.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
     }
 
 }

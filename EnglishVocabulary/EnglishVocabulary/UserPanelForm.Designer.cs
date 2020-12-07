@@ -209,6 +209,7 @@
             this.loadLabel.Size = new System.Drawing.Size(127, 50);
             this.loadLabel.TabIndex = 11;
             this.loadLabel.Text = "Load";
+            this.loadLabel.Click += new System.EventHandler(this.LoadLabel_Click);
             // 
             // UserPanelForm
             // 
